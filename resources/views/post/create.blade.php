@@ -20,8 +20,8 @@
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="description">Description<span class="text-danger">*</span></label>
-                                    <input id="description" class="form-control summernote" type="text" name="description">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" class="form-control summernote" name="description" rows="3"></textarea>
                                 </div>
                             </div>
 
@@ -72,7 +72,7 @@
                                             <input id="max_age" class="form-control-file" type="text" name="max_age">
                                         </div>
                                     </div>
-                                       
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="image">Upload image <span class="text-danger">*</span></label>

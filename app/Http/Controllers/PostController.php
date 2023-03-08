@@ -7,6 +7,7 @@ use App\Models\PaymentCategory;
 use App\Models\Post;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -18,7 +19,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $post = Post::all();
+        $post = Post::orderBy('created_at','desc')->get();
         return view('admin.post.index',compact('post'));
     }
 
@@ -43,19 +44,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $post = new Post();
-        $post->title = $request->title;
-        $post->description = $request->description;
-        $post->category = $request->category;
-        $post->tags = $request->tags;
-        $post->paymentcategory = $request->paymentcategory;
-        $post->type = $request->type;
-        $post->age = $request->age;
-        $post->views = $request->views;
-        uploadImage($request,$post,'image');
-        $post->save();
-        return redirect()->route('post.index');
+
     }
 
     /**
@@ -66,7 +55,8 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('admin.post.show',compact('post'));
     }
 
     /**
@@ -95,18 +85,10 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $post =  post::find($id);
-        $post->title = $request->title;
-        $post->description = $request->description;
-        $post->category = $request->category;
-        $post->tags = $request->tags;
-        $post->paymentcategory = $request->paymentcategory;
-        $post->type = $request->type;
-        $post->age = $request->age;
-        $post->views = $request->views;
-        uploadImage($request,$post,'image');
+        $post =  Post::find($id);
+        $post->status = $request->status;
         $post->update();
-        return redirect()->route('post.index');
+        return redirect()->back();
     }
 
     /**

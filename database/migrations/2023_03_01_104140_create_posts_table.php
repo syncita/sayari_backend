@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('max_age');
             $table->string('image');
             $table->integer('views')->default(0);
+            $table->foreignId('user_id')->constrained();
             $table->enum('status',['pending','approved','rejected'])->default('pending');
             $table->timestamps();
         });

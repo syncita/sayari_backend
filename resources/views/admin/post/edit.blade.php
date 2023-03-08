@@ -1,9 +1,9 @@
-<x-admin-layout>
+<x-app-layout>
     <section>
         <div class="container">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h3>Update Post</h3>
+                    <h3>Edit Product</h3>
                     <a href="{{ route('post.index') }}" class="btn btn-primary btn-sm">Back</a>
                 </div>
 
@@ -14,45 +14,89 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="title">Title <span class="text-danger">*</span></label>
+                                    <label for="title">Title<span class="text-danger">*</span></label>
                                     <input id="title" class="form-control" type="text" name="title" value="{{ $post->title }}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" class="form-control summernote" name="description" rows="3">{{ $post->description }}</textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="category_id">Category <span class="text-danger">*</span></label>
+                                    <select id="category_id" class="form-control" name="category_id">
+                                        @foreach ($category as $item)
+                                            <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="category_id">Category <span class="text-danger">*</span></label>
-                                    <input id="category_id" class="form-control" type="text" name="category_id" value="{{ $post->category }}">
+                                    <label for="tags">Tags<span class="text-danger">*</span></label>
+                                    <input id="tags" class="form-control" type="tags" name="tags" value="{{ $post->tags }}">
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                           <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="payment_category_id">Payment Category</label>
+                                <select id="payment_category_id" class="form-control" name="payment_category_id">
+                                    @foreach ($payment as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                           </div>
+
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="type">Type<span class="text-danger">*</span></label>
-                                        <input id="type" class="form-control-file" type="text" name="type" value="{{ $post->type }}">
+                                        <label for="type_id">Type<span class="text-danger">*</span></label>
+                                        <select id="type_id" class="form-control" name="type_id">
+                                            @foreach ($type as $item)
+                                                <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
+                                </div>
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="age">Age<span class="text-danger">*</span></label>
-                                            <input id="age" class="form-control-file" type="text" name="age" value="{{ $post->age }}">
+                                            <label for="max_age">max_age<span class="text-danger">*</span></label>
+                                            <input id="max_age" class="form-control" type="text" name="max_age" value="{{ $post->max_age }}">
                                         </div>
+                                    </div>
 
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="views">Status<span class="text-danger">*</span></label>
-                                                <input id="views" class="form-control-file" type="text" name="views" value="{{ $post->views }}">
-                                            </div>
-                                <div class="my-2">
-                                    <img src="{{ asset($post->image) }}" width="120" alt="">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="image">Upload image <span class="text-danger">*</span></label>
+                                    <input id="image" class="form-control-file" type="file" name="image">
                                 </div>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Update Record</button>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="status">Select Status</label>
+                                    <select id="status" class="form-control" name="status">
+                                        <option value="pending" {{ "pending" == $post->status ? 'selected' : '' }}>Pending</option>
+                                        <option value="approved" {{ "approved" == $post->status ? 'selected' : '' }}>Approved</option>
+                                        <option value="rejected" {{ "rejected" == $post->status ? 'selected' : '' }}>Rejected</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                           <div> <button type="submit" class="btn btn-primary">Save Record</button></div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-</x-admin-layout>
+</x-app-layout>
