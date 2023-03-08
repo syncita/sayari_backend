@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\PaymentCategory;
+use App\Models\Post;
 use App\Models\Type;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 
-
-class TypeController extends Controller
+class UserPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +17,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
-        $type = Type::all();
-        return view('admin.type.index',compact('type'));
+        $post = Post::all();
+        return view('post.index',compact('post'));
     }
 
     /**
@@ -28,7 +28,10 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view('admin.type.create');
+        $category = Category::all();
+        $payment = PaymentCategory::all();
+        $type = Type::all();
+        return view('post.create',compact('category','payment','type'));
     }
 
     /**
@@ -39,13 +42,18 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $type = new Type();
-        $type->name = $request->name;
-        $type->slug = Str::slug($request->name);
-        $type->save();
-        return redirect()->route('type.index');
-
+        dd($request->all());
+        $post = new Post();
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->category_id = $request->category_id;
+        $post->type_id = $request->type_id;
+        $post->payment_category_id = $request->payment_category_id;
+        $post->tags = $request->tags;
+        $post->max_age = $request->max_age;
+        uploadImage($request,$post,'image');
+        $post->save();
+        return redirect()->back();
     }
 
     /**
@@ -67,9 +75,11 @@ class TypeController extends Controller
      */
     public function edit($id)
     {
-        //
-        $type = Type::find($id);
-        return view('admin.type.edit',compact('type'));
+        $article = Post::find($id);
+        $category = Category::all();
+        $payment = PaymentCategory::all();
+        $type = Type::all();
+        return view('post.create',compact('category','payment','type','article'));
     }
 
     /**
@@ -82,12 +92,6 @@ class TypeController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $type = type::find($id);
-        $type->name = $request->name;
-        $type->slug = Str::slug($request->name);
-       $type->update();
-       return redirect()->route('type.index');
-
     }
 
     /**
@@ -98,8 +102,6 @@ class TypeController extends Controller
      */
     public function destroy($id)
     {
-        $type = Type::find($id);
-        $type->delete();
-        return redirect()->route('type.index');
+        //
     }
 }

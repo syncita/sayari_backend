@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <section>
         <div class="card">
             <div class="card-header d-flex justify-content-between">
@@ -7,18 +7,18 @@
                <a href="{{ route('company.create') }}" class="btn btn-primary btn-sm">Create Company</a>
                @endif
 
-      
+
             </div>
             <div class="card-body">
                 <table class="table">
                     <tr>
-                        <th>SN</th>
-                        <th>Logo</th>
-                        <th>Company Name</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Action</th>
+                        <th class="border border-1">SN</th>
+                        <th class="border border-1">Logo</th>
+                        <th class="border border-1">Company Name</th>
+                        <th class="border border-1">Address</th>
+                        <th class="border border-1">Phone</th>
+                        <th class="border border-1">Email</th>
+                        <th class="border border-1">Action</th>
                     </tr>
 
                     @if (!empty($company))
@@ -33,10 +33,10 @@
                                 <a href="{{ route('company.edit',$company->id) }}" class="btn btn-primary btn-sm">Edit</a>
                             </td>
                         </tr>
-                        
+
                     @endif
                 </table>
             </div>
         </div>
     </section>
-</x-app-layout>
+</x-admin-layout>

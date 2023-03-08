@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <section>
         <div class="container">
             <div class="card">
@@ -19,15 +19,15 @@
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="description">Description <span class="text-danger">*</span></label>
-                                    <input id="description" class="form-control summernote" type="text" name="description" value="{{ $about->description }}">
+                                    <label for="description">Description</label>
+                                    <textarea id="description" class="form-control summernote" name="description" rows="3">{{ $about->description }}</textarea>
                                 </div>
                             </div>
 
-                 
-                            <div class="col-md-6">
+
+                            <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="image">Upload Image <span class="text-danger">*</span></label>
                                     <input id="image" class="form-control-file" type="file" name="image">
@@ -45,4 +45,4 @@
             </div>
         </div>
     </section>
-</x-app-layout>
+</x-admin-layout>

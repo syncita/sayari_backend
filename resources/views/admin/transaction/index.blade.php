@@ -1,12 +1,12 @@
-<x-app-layout>
+<x-admin-layout>
     <section>
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <h3>Transaction</h5>
                <a href="{{ route('transaction.create') }}" class="btn btn-primary btn-sm">Create Category</a>
-             
 
-      
+
+
             </div>
             <div class="card-body">
                 <table class="table">
@@ -25,11 +25,11 @@
                     </td>
                 </tr>
                 @endforeach
-                        
-                        
-                 
+
+
+
                 </table>
             </div>
         </div>
     </section>
-</x-app-layout>
+</x-admin-layout>

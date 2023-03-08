@@ -1,8 +1,9 @@
-<x-admin-layout>
+<x-app-layout>
     <section>
         <div class="card">
             <div class="card-header d-flex justify-content-between">
-                <h3>New Product</h5>
+                <h3>My Post</h5>
+                    <a href="{{ route('article.create') }}" class="btn btn-primary btn-sm">Add New</a>
                </div>
             <div class="card-body">
                 <table class="table">
@@ -38,4 +39,4 @@
             </div>
         </div>
     </section>
-</x-admin-layout>
+</x-app-layout>

@@ -1,14 +1,14 @@
-<x-admin-layout>
+<x-app-layout>
     <section>
         <div class="container">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h3>Create post</h3>
-                    <a href="{{ route('post.index') }}" class="btn btn-primary btn-sm">Back</a>
+                    <h3>Create rticle</h3>
+                    <a href="{{ route('article.index') }}" class="btn btn-primary btn-sm">Back</a>
                 </div>
 
                 <div class="card-body">
-                    <form action="{{ route('post.store') }}" method="post" enctype="multipart/form-data">
+                    <form action="{{ route('article.store') }}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-12">
@@ -46,8 +46,8 @@
 
                            <div class="col-md-6">
                             <div class="form-group">
-                                <label for="paymentcategory_id">Payment Category</label>
-                                <select id="paymentcategory_id" class="form-control" name="paymentcategory_id">
+                                <label for="payment_category_id">Payment Category</label>
+                                <select id="payment_category_id" class="form-control" name="payment_category_id">
                                     @foreach ($payment as $item)
                                         <option value="{{ $item->id }}">{{ $item->name }}</option>
                                     @endforeach
@@ -57,8 +57,8 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="type">Type<span class="text-danger">*</span></label>
-                                        <select id="type" class="form-control" name="type">
+                                        <label for="type_id">Type<span class="text-danger">*</span></label>
+                                        <select id="type_id" class="form-control" name="type_id">
                                             @foreach ($type as $item)
                                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
                                             @endforeach
@@ -68,20 +68,15 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="age">Age<span class="text-danger">*</span></label>
-                                            <input id="age" class="form-control-file" type="text" name="age">
+                                            <label for="max_age">max_age<span class="text-danger">*</span></label>
+                                            <input id="max_age" class="form-control-file" type="text" name="max_age">
                                         </div>
                                     </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="views">Views<span class="text-danger">*</span></label>
-                                                <input id="views" class="form-control-file" type="text" name="views">
-                                            </div>
-                                        </div>
+                                       
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="logo">Upload image <span class="text-danger">*</span></label>
-                                    <input id="logo" class="form-control-file" type="file" name="logo">
+                                    <label for="image">Upload image <span class="text-danger">*</span></label>
+                                    <input id="image" class="form-control-file" type="file" name="image">
                                 </div>
                             </div>
 
@@ -92,4 +87,4 @@
             </div>
         </div>
     </section>
-</x-admin-layout>
+</x-app-layout>

@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <section>
         <div class="container">
             <div class="card">
@@ -23,4 +23,4 @@
             </div>
         </div>
     </section>
-</x-app-layout>
+</x-admin-layout>

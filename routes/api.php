@@ -17,7 +17,3 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::post('category',[CategoryApiController::class,'store']);
-Route::post('type',[CategoryApiController::class,'createType']);
-Route::post('payment-category',[CategoryApiController::class,'createPaymentCategory']);

@@ -42,7 +42,7 @@ class PaymentCategoryController extends Controller
         $paymentcategory = new PaymentCategory();
         $paymentcategory->name = $request->name;
         $paymentcategory->save();
-        return redirect()->route('payment-category.index');
+        return redirect()->route('paymentcategory.index');
 
     }
 
@@ -95,6 +95,8 @@ class PaymentCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $p = PaymentCategory::find($id);
+        $p->delete();
+        return redirect()->route('paymentcategory.index');
     }
 }

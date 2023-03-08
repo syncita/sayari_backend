@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-admin-layout>
     <section>
         <div class="container">
             <div class="card">
@@ -18,7 +18,7 @@
                                 </div>
                             </div>
 
-                            
+
 
                             <button type="submit" class="btn btn-primary">Save Record</button>
                         </div>
@@ -27,4 +27,4 @@
             </div>
         </div>
     </section>
-</x-app-layout>
+</x-admin-layout>

@@ -25,7 +25,7 @@
             <li><a class="nav-link" href="{{ route('user.index') }}"><i data-feather="user"></i> <span>User</span></a></li>
             <li><a class="nav-link" href="">Transactions</a></li>
             <li><a class="nav-link" href="{{ route('about.index') }}"><i data-feather="copy"></i> <span>About Page</span></a></li>
-            <li><a class="nav-link" href="{{ route('post.index') }}"><i data-feather="plus"></i> <span>Post</span></a></li>
+            <li><a class="nav-link" href="{{ route('post.index') }}"><i data-feather="plus"></i> <span>New Product</span></a></li>
           </li>
             
     </aside>
