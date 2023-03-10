@@ -67,7 +67,7 @@ class PaymentCategoryController extends Controller
     {
         //
         $paymentcategory = PaymentCategory::find($id);
-        return view('admin.paymentcategory.edit',compact('payment-category'));
+        return view('admin.payment-category.edit',compact('paymentcategory'));
     }
 
     /**
@@ -83,7 +83,7 @@ class PaymentCategoryController extends Controller
         $paymentcategory = PaymentCategory::find($id);
         $paymentcategory->name = $request->name;
         $paymentcategory->update();
-              return redirect()->route('payment-category.index');
+              return redirect()->route('paymentcategory.index');
 
     }
 

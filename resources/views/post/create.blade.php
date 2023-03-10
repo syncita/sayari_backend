@@ -3,7 +3,7 @@
         <div class="container">
             <div class="card">
                 <div class="card-header d-flex justify-content-between">
-                    <h3>Create rticle</h3>
+                    <h3>Create Article</h3>
                     <a href="{{ route('article.index') }}" class="btn btn-primary btn-sm">Back</a>
                 </div>
 
@@ -68,7 +68,7 @@
 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="max_age">max_age<span class="text-danger">*</span></label>
+                                            <label for="max_age">Max Age<span class="text-danger">*</span></label>
                                             <input id="max_age" class="form-control-file" type="text" name="max_age">
                                         </div>
                                     </div>

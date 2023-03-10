@@ -14,7 +14,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="name">category Name <span class="text-danger">*</span></label>
+                                    <label for="name">Category Name <span class="text-danger">*</span></label>
                                     <input id="name" class="form-control" type="text" name="name" value="{{ $paymentcategory->name }}">
                                 </div>
                             </div>

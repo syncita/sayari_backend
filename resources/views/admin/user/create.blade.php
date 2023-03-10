@@ -38,8 +38,10 @@
                                     <input id="status" class="form-control" type="status" name="status">
                                 </div>
                             </div>
-
-                            <button type="submit" class="btn btn-primary">Save Record</button>
+                            
+                            <div class="col-md-12">
+                              <button type="submit" class="btn btn-primary">Save Record</button>
+                            </div>
                         </div>
                     </form>
                 </div>

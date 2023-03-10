@@ -17,9 +17,9 @@
                         <th class="border border-1">Action</th>
                     </tr>
 
-                @foreach ($categories as $item)
+                @foreach ($categories as $index=>$item)
                 <tr>
-                    <td class="border border-1">{{ $item->id }}</td>
+                    <td class="border border-1">{{ ++$index}}</td>
                     <td class="border border-1">{{ $item->name }}</td>
                     <td class="border border-1">
                        <form action="{{ route('category.destroy',$item->id) }}" method="post">

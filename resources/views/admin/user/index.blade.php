@@ -3,9 +3,6 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <h3>User</h5>
-               <a href="{{ route('user.create') }}" class="btn btn-primary btn-sm">Create User</a>
-
-
 
             </div>
             <div class="card-body">

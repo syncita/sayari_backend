@@ -3,8 +3,7 @@
         <div class="card">
             <div class="card-header d-flex justify-content-between">
                 <h3>New Products</h5>
-                    <a href="{{ route('post.create') }}" class="btn btn-primary btn-sm">Add New</a>
-               </div>
+                    </div>
             <div class="card-body">
                 <table class="table">
                     <tr>
